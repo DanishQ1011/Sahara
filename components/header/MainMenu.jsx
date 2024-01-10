@@ -30,9 +30,9 @@ const MainMenu = ({ style = "" }) => {
         >
           <a href="#">
             <span className="mr-10">Home</span>
-            <i className="icon icon-chevron-sm-down" />
+            {/* <i className="icon icon-chevron-sm-down" /> */}
           </a>
-          <ul className="subnav">
+          {/* <ul className="subnav">
             {homeItems.map((menu, i) => (
               <li
                 key={i}
@@ -43,7 +43,7 @@ const MainMenu = ({ style = "" }) => {
                 <Link href={menu.routePath}>{menu.name}</Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </li>
         {/* End home page menu */}
 
