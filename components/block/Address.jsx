@@ -8,27 +8,27 @@ const Address = () => {
         <>328 Queensberry Street, North Melbourne VIC 3051, Australia.</>
       ),
     },
-    {
-      id: 2,
-      colClass: "col-auto",
-      title: "Toll Free Customer Care",
-      content: (
-        <>
-          <a href="tel:+4733378901">+47 333 78 901</a>
-        </>
-      ),
-    },
-    {
-      id: 3,
-      colClass: "col-auto",
-      title: "Need live support?",
-      content: (
-        <>
-          {" "}
-          <a href="mailto:i@gotrip.com">hi@gotrip.com</a>
-        </>
-      ),
-    },
+    // {
+    //   id: 2,
+    //   colClass: "col-auto",
+    //   title: "Toll Free Customer Care",
+    //   content: (
+    //     <>
+    //       <a href="tel:+4733378901">+47 333 78 901</a>
+    //     </>
+    //   ),
+    // },
+    // {
+    //   id: 3,
+    //   colClass: "col-auto",
+    //   title: "Need live support?",
+    //   content: (
+    //     <>
+    //       {" "}
+    //       <a href="mailto:i@gotrip.com">hi@gotrip.com</a>
+    //     </>
+    //   ),
+    // },
   ];
   return (
     <>

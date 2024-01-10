@@ -5,7 +5,7 @@ const Copyright = () => {
     <div className="row justify-between items-center y-gap-10">
       <div className="col-auto">
         <div className="row x-gap-30 y-gap-10">
-          <div className="col-auto">
+          {/* <div className="col-auto">
             <div className="d-flex items-center">
               © {new Date().getFullYear()} by
               <a
@@ -18,7 +18,7 @@ const Copyright = () => {
               </a>
               All rights reserved.
             </div>
-          </div>
+          </div> */}
           {/* End .col */}
           <div className="col-auto">
             <div className="d-flex x-gap-15">
