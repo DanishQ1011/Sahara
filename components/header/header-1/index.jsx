@@ -1,15 +1,21 @@
 
 'use client'
-
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import MainMenu from "../MainMenu";
 import CurrenctyMegaMenu from "../CurrenctyMegaMenu";
 import LanguageMegaMenu from "../LanguageMegaMenu";
 import MobileMenu from "../MobileMenu";
+import { useRouter } from "next/navigation";
 
 const Header1 = () => {
   const [navbar, setNavbar] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
+  const router = useRouter()
+
+  const supabase = createClientComponentClient();
 
   const changeBackground = () => {
     if (window.scrollY >= 10) {
@@ -25,6 +31,28 @@ const Header1 = () => {
       window.removeEventListener("scroll", changeBackground);
     };
   }, []);
+
+  useEffect(() => {
+    async function getUser(){
+        const {data: {user}} = await supabase.auth.getUser()
+        setUser({user, loading})
+        setLoading(false)
+    }
+
+    getUser();
+  }, [])
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.refresh();
+    setUser(null)
+  }
+
+  console.log(user)
+
+//   if (loading){
+//     return <h1>loading..</h1>
+// }
 
   return (
     <>
@@ -69,18 +97,24 @@ const Header1 = () => {
 
                 {/* Start btn-group */}
                 <div className="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-                  <Link
+                  {/* <Link
                     href="/login"
                     className="button px-30 fw-400 text-14 -white bg-white h-50 text-dark-1"
                   >
                     Become An Expert
-                  </Link>
-                  <Link
-                    href="/signup"
-                    className="button px-30 fw-400 text-14 border-white -outline-white h-50 text-white ml-20"
-                  >
-                    Sign In / Register
-                  </Link>
+                  </Link> */}
+                  <div>
+
+                    {user ? (
+                      // User is logged in
+                      <button className="button px-30 fw-400 text-14 border-white -outline-white h-50 text-white ml-20" onClick={handleLogout}>Logout</button>
+                    ) : (
+                      // User is not logged in
+                      <div>
+                        <button className="button px-30 fw-400 text-14 border-white -outline-white h-50 text-white ml-20" onClick={() => router.push('/login')}>Sign In / Register </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
                 {/* End btn-group */}
 
