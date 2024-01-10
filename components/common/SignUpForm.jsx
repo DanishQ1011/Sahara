@@ -1,10 +1,80 @@
-import Link from "next/link";
+'use client';
 
-const SignUpForm = () => {
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+export default function SignUpForm(){
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter()
+
+  const supabase = createClientComponentClient();
+
+  useEffect(() => {
+    async function getUser(){
+        const {data: {user}} = await supabase.auth.getUser()
+        setUser(user)
+        setLoading(false)
+    }
+
+    getUser();
+  }, [])
+
+  const handleSignUp = async () => {
+    await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${location.origin}/auth/callback`
+      }
+    })
+    setUser(res.data.user)
+    router.refresh();
+    setEmail('')
+    setPassword('')
+  }
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.refresh();
+    setUser(null)
+  }
+
+  console.log({loading, user})
+
+  if (loading){
+      return <h1>loading..</h1>
+  }
+
+  if (user){
+    return (
+        <div className="h-screen flex flex-col justify-center items-center bg-gray-100">
+        <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md w-96 text-center">
+            <p className="mb-4 text-xl font-bold text-gray-700 dark:text-gray-300">
+                You're already logged in
+            </p>
+            <div className="col-12">
+            <button
+              onClick={handleLogout}
+              className="button py-20 -dark-1 bg-blue-1 text-white w-100"
+            >
+              Log out <div className="icon-arrow-top-right ml-15" />
+            </button>
+          </div>
+        </div>
+    </div>
+    )
+}
+
   return (
     <form className="row y-gap-20">
       <div className="col-12">
-        <h1 className="text-22 fw-500">Welcome back</h1>
+        <h1 className="text-22 fw-500">Welcome</h1>
         <p className="mt-10">
           Already have an account yet?{" "}
           <Link href="/login" className="text-blue-1">
@@ -14,25 +84,31 @@ const SignUpForm = () => {
       </div>
       {/* End .col */}
 
-      <div className="col-12">
+      {/* <div className="col-12">
         <div className="form-input ">
           <input type="text" required />
           <label className="lh-1 text-14 text-light-1">First Name</label>
         </div>
-      </div>
+      </div> */}
       {/* End .col */}
 
-      <div className="col-12">
+      {/* <div className="col-12">
         <div className="form-input ">
           <input type="text" required />
           <label className="lh-1 text-14 text-light-1">Last Name</label>
         </div>
-      </div>
+      </div> */}
       {/* End .col */}
 
       <div className="col-12">
         <div className="form-input ">
-          <input type="text" required />
+          <input 
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}  
+            required 
+          />
           <label className="lh-1 text-14 text-light-1">Email</label>
         </div>
       </div>
@@ -40,18 +116,24 @@ const SignUpForm = () => {
 
       <div className="col-12">
         <div className="form-input ">
-          <input type="password" required />
+          <input 
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)} 
+            required 
+          />
           <label className="lh-1 text-14 text-light-1">Password</label>
         </div>
       </div>
       {/* End .col */}
 
-      <div className="col-12">
+      {/* <div className="col-12">
         <div className="form-input ">
           <input type="password" required />
           <label className="lh-1 text-14 text-light-1">Confirm Password</label>
         </div>
-      </div>
+      </div> */}
       {/* End .col */}
 
       <div className="col-12">
@@ -72,8 +154,7 @@ const SignUpForm = () => {
 
       <div className="col-12">
         <button
-          type="submit"
-          href="#"
+          onClick={handleSignUp}
           className="button py-20 -dark-1 bg-blue-1 text-white w-100"
         >
           Sign Up <div className="icon-arrow-top-right ml-15" />
@@ -83,5 +164,3 @@ const SignUpForm = () => {
     </form>
   );
 };
-
-export default SignUpForm;
