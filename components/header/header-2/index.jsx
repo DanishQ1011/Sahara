@@ -65,7 +65,7 @@ const Header1 = () => {
 
                 <Link href="/" className="header-logo mr-20">
                   <img src="/img/general/logo-light-2.svg" alt="logo icon" />
-                  <img src="/img/general/logo-dark.svg" alt="logo icon" />
+                  <img src="/img/general/logo-light.svg" alt="logo icon" />
                 </Link>
                 {/* End logo */}
 

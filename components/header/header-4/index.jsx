@@ -44,7 +44,7 @@ const Header1 = () => {
             <div className="col-auto">
               <Link href="/" className="header-logo">
                 <img src="/img/general/logo-light.svg" alt="logo icon" />
-                <img src="/img/general/logo-dark.svg" alt="logo icon" />
+                <img src="/img/general/logo-light.svg" alt="logo icon" />
               </Link>
               {/* End logo */}
             </div>
