@@ -11,6 +11,7 @@ export default function SignUpForm(){
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [confirmPassword, setConfirmPassword] = useState('');
   const router = useRouter()
 
   const supabase = createClientComponentClient();
@@ -25,19 +26,45 @@ export default function SignUpForm(){
     getUser();
   }, [])
 
+  // const handleSignUp = async () => {
+  //   await supabase.auth.signUp({
+  //     email,
+  //     password,
+  //     options: {
+  //       emailRedirectTo: `${location.origin}/auth/callback`
+  //     }
+  //   })
+  //   setUser(res.data.user)
+  //   router.refresh();
+  //   setEmail('')
+  //   setPassword('')
+  // }
+
   const handleSignUp = async () => {
-    await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${location.origin}/auth/callback`
-      }
-    })
-    setUser(res.data.user)
-    router.refresh();
-    setEmail('')
-    setPassword('')
-  }
+    if (password !== confirmPassword) {
+      alert("Passwords do not match. Please make sure both passwords are the same.");
+      return;
+    }
+
+    try {
+      const res = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: `${location.origin}/auth/callback`
+        }
+      });
+
+      setUser(res.data.user);
+      router.refresh();
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+    } catch (error) {
+      console.error("Sign-up error:", error);
+      // Handle the sign-up error, e.g., show a user-friendly error message
+    }
+  };
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -128,13 +155,18 @@ export default function SignUpForm(){
       </div>
       {/* End .col */}
 
-      {/* <div className="col-12">
-        <div className="form-input ">
-          <input type="password" required />
+      <div className="col-12">
+        <div className="form-input">
+          <input
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
           <label className="lh-1 text-14 text-light-1">Confirm Password</label>
         </div>
-      </div> */}
-      {/* End .col */}
+      </div>
 
       <div className="col-12">
         <div className="d-flex ">
