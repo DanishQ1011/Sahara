@@ -9,9 +9,10 @@ export default function SignUpForm(){
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [confirmPassword, setConfirmPassword] = useState('');
   const router = useRouter()
 
   const supabase = createClientComponentClient();
@@ -26,45 +27,20 @@ export default function SignUpForm(){
     getUser();
   }, [])
 
-  // const handleSignUp = async () => {
-  //   await supabase.auth.signUp({
-  //     email,
-  //     password,
-  //     options: {
-  //       emailRedirectTo: `${location.origin}/auth/callback`
-  //     }
-  //   })
-  //   setUser(res.data.user)
-  //   router.refresh();
-  //   setEmail('')
-  //   setPassword('')
-  // }
+  const handleSignUp = async (e) => {
+    e.preventDefault();
 
-  const handleSignUp = async () => {
-    if (password !== confirmPassword) {
-      alert("Passwords do not match. Please make sure both passwords are the same.");
-      return;
-    }
-
-    try {
-      const res = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/auth/callback`
-        }
-      });
-
-      setUser(res.data.user);
-      router.refresh();
-      setEmail('');
-      setPassword('');
-      setConfirmPassword('');
+   try {
+      const { user, error } = await supabase.auth.signUp({ email, password });
+      router.push('/'); // Redirect to home page on success
     } catch (error) {
-      console.error("Sign-up error:", error);
-      // Handle the sign-up error, e.g., show a user-friendly error message
+      setError(error.message);
     }
-  };
+    setUser(res.data.user)
+    router.refresh();
+    setEmail('')
+    setPassword('')
+  }
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -155,18 +131,13 @@ export default function SignUpForm(){
       </div>
       {/* End .col */}
 
-      <div className="col-12">
-        <div className="form-input">
-          <input
-            type="password"
-            name="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
+      {/* <div className="col-12">
+        <div className="form-input ">
+          <input type="password" required />
           <label className="lh-1 text-14 text-light-1">Confirm Password</label>
         </div>
-      </div>
+      </div> */}
+      {/* End .col */}
 
       <div className="col-12">
         <div className="d-flex ">
