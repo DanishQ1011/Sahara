@@ -51,7 +51,7 @@ export default function SignUpForm(){
         email,
         password,
         options: {
-          emailRedirectTo: `${location.origin}/auth/callback`
+          emailRedirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/auth/callback`
         }
       });
 
