@@ -11,11 +11,9 @@ export default function SignUpForm(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [passwordMatchError, setPasswordMatchError] = useState('');
   const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [signupSuccess, setSignupSuccess] = useState(false);
   const router = useRouter()
 
   const supabase = createClientComponentClient();
@@ -32,6 +30,7 @@ export default function SignUpForm(){
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
   
     if (password !== confirmPassword) {
       setPasswordMatchError('Passwords do not match');
@@ -66,10 +65,20 @@ export default function SignUpForm(){
         setSignupSuccess(true);
         console.log('Signup successful. Signup success state:', signupSuccess);
       }
+=======
+
+   try {
+      const { user, error } = await supabase.auth.signUp({ email, password });
+      router.push('/'); // Redirect to home page on success
+>>>>>>> parent of 3abca99 (Update SignUpForm.jsx)
     } catch (error) {
       setError(error.message);
     }
-  };
+    setUser(res.data.user)
+    router.refresh();
+    setEmail('')
+    setPassword('')
+  }
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -132,7 +141,7 @@ export default function SignUpForm(){
       </div> */}
       {/* End .col */}
 
-      <div className={signupSuccess ? 'hidden' : 'col-12'}>
+      <div className="col-12">
         <div className="form-input ">
           <input 
             type="email"
@@ -146,7 +155,7 @@ export default function SignUpForm(){
       </div>
       {/* End .col */}
 
-      <div className={signupSuccess ? 'hidden' : 'col-12'}>
+      <div className="col-12">
         <div className="form-input ">
           <input 
             type="password"
@@ -160,26 +169,15 @@ export default function SignUpForm(){
       </div>
       {/* End .col */}
 
-      <div className={signupSuccess ? 'hidden' : 'col-12'}>
-        <div className="form-input">
-          <input
-            type="password"
-            name="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
+      {/* <div className="col-12">
+        <div className="form-input ">
+          <input type="password" required />
           <label className="lh-1 text-14 text-light-1">Confirm Password</label>
         </div>
-        {passwordMatchError && (
-            <p style={{ color: 'red', fontSize: '14px', marginTop: '5px' }}>
-              {passwordMatchError}
-            </p>
-          )}
-      </div>
+      </div> */}
       {/* End .col */}
 
-      <div className={signupSuccess ? 'hidden' : 'col-12'}>
+      <div className="col-12">
         <div className="d-flex ">
           <div className="form-checkbox mt-5">
             <input type="checkbox" name="name" />
@@ -194,14 +192,6 @@ export default function SignUpForm(){
         </div>
       </div>
       {/* End .col */}
-
-      <div className="col-12">
-        {signupSuccess && (
-          <p style={{ color: 'green', fontSize: '22px', fontWeight: 'bold' }}>
-            Confirmation link sent to your email. Please check your inbox.
-          </p>
-        )}
-      </div>
 
       <div className="col-12">
         <button
