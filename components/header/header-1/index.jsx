@@ -33,26 +33,40 @@ const Header1 = () => {
   }, []);
 
   useEffect(() => {
-    async function getUser(){
-        const {data: {user}} = await supabase.auth.getUser()
-        setUser({user, loading})
-        setLoading(false)
-    }
-
+    const getUser = async () => {
+      try {
+        const { user } = await supabase.auth.session();
+        console.log("Fetched user:", user);
+  
+        setUser({ user, loading: false });
+      } catch (error) {
+        console.error("Error fetching user:", error.message);
+        setUser({ user: null, loading: false });
+      }
+    };
+  
     getUser();
-  }, [])
+  }, []);
 
   const handleLogout = async () => {
-    // Display a confirmation dialog
-    const shouldLogout = window.confirm("Are you sure you want to log out?");
-    
-    if (shouldLogout) {
+    try {
+      console.log("Logging out...");
+      // Sign out the user using Supabase auth
       await supabase.auth.signOut();
-      router.refresh();
+  
+      // Update the local state to reflect the user is logged out
       setUser(null);
+  
+      // Refresh the page or navigate to the login page
+      console.log("Redirecting to login...");
+      router.push('/login'); // Assuming you have a login page
+  
+    } catch (error) {
+      console.error('Error during logout:', error.message);
     }
   };
 
+  console.log("User state:", user);
   console.log(user)
 
 //   if (loading){

@@ -4,6 +4,7 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { sendConfirmationEmail } from '../../utils/sendEmail';
 
 export default function SignUpForm(){
 
@@ -31,30 +32,39 @@ export default function SignUpForm(){
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-
+  
     if (password !== confirmPassword) {
       setPasswordMatchError('Passwords do not match');
       return;
     }
-
+  
     try {
       const { user, error } = await supabase.auth.signUp({
         email,
         password,
       });
-
+  
       if (error) {
         setError(error.message);
       } else {
-        // Set the user data
-        setUser(user);
-
+        // Send confirmation email with the confirmation link
+        const confirmationLink = `${process.env.NEXT_PUBLIC_APP_URL}/api/confirm/${user.id}`;
+        // Note: Replace process.env.NEXT_PUBLIC_BASE_URL with your actual base URL
+  
+        // You can customize the email content based on your needs
+        const emailContent = `Click the following link to confirm your email: ${confirmationLink}`;
+  
+        // Send the confirmation email (use your preferred email sending method)
+        sendConfirmationEmail(user.email, emailContent);
+  
         // Reset form fields, error state, and set signup success to true
         setEmail('');
         setPassword('');
         setConfirmPassword('');
         setError(null);
         setSignupSuccess(true);
+        setSignupSuccess(true);
+        console.log('Signup successful. Signup success state:', signupSuccess);
       }
     } catch (error) {
       setError(error.message);
