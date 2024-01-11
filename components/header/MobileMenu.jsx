@@ -68,7 +68,7 @@ const MobileMenu = () => {
           data-bs-dismiss="offcanvas"
           aria-label="Close"
         >
-          <i className="icon icon-close"></i>
+          {/* <i className="icon icon-close"></i> */}
         </div>
         {/* icon close */}
       </div>
@@ -78,22 +78,17 @@ const MobileMenu = () => {
         <Sidebar width="400" backgroundColor="#fff">
 
           <Menu>
-            <SubMenu label="Home" className={ homeItems.some((item=>item.routePath?.split('/')[1] == pathname.split('/')[1])) ? "menu-active-link":''}>
-              {homeItems.map((item, i) => (
-                <MenuItem
-                  key={i}
-                  onClick={()=>router.push(item.routePath)}
-                  className={
-                    isActiveLink(item.routePath, pathname)
-                      ? "menu-active-link"
-                      : "inactive-menu"
-                  }
-                 
-                >
-                  {item.name}
-                </MenuItem>
-              ))}
-            </SubMenu>
+            <MenuItem
+              onClick={()=>router.push("/")}
+              className={
+                pathname === "/"
+                  ? "menu-active-link"
+                  : ""
+              }
+                
+              >
+                Home
+            </MenuItem>
             {/* End  All Home Menu */}
 
             <SubMenu label="Categories" className={isActiveParent ? 'menu-active-link':'' }>

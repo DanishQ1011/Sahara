@@ -43,10 +43,15 @@ const Header1 = () => {
   }, [])
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.refresh();
-    setUser(null)
-  }
+    // Display a confirmation dialog
+    const shouldLogout = window.confirm("Are you sure you want to log out?");
+    
+    if (shouldLogout) {
+      await supabase.auth.signOut();
+      router.refresh();
+      setUser(null);
+    }
+  };
 
   console.log(user)
 
