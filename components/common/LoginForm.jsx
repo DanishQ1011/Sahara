@@ -28,30 +28,20 @@ export default function LoginForm() {
 
   const handleSignIn = async (e) => {
     e.preventDefault(); // Prevent default form submission
-    
+    console.log("Before try:", error, user, loading);
     try {
-      console.log('Signing in with:', email, password);
-  
-      const { user, error } = await supabase.auth.signInWithPassword({ email, password });
-      
-      console.log('SignIn Result:', user, error);
-  
-      if (error) {
-        console.error('SignIn Error:', error);
-        setError(error.message);
-      } else {
-        console.log('SignIn Successful!');
-        // Reset form fields and error state
-        setEmail('');
-        setPassword('');
-        setError(null);
-  
-        // Redirect to home page
-        router.push('/');
-      }
+      const res = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      console.log("After try:", error, user, loading);
+      setError(null);
+      router.push('/'); // Use router.push to navigate to the homepage
+      // ... rest of your success logic
     } catch (error) {
-      console.error('SignIn Exception:', error);
-      setError(error.message);
+      console.error(error);
+      setError(error.message); // Display the error message to the user
+      console.log("In catch:", error, user, loading);
     }
   };
 
@@ -126,13 +116,6 @@ export default function LoginForm() {
           />
           <label className="lh-1 text-14 text-light-1">Password</label>
         </div>
-
-        {error && (
-          <p style={{ color: 'red' }}>
-            Password is incorrect. Please try again.
-          </p>
-        )}
-
       </div>
       {/* End .col */}
 
