@@ -28,7 +28,7 @@ const MainMenu = ({ style = "" }) => {
             isActiveParentChaild(homeItems, pathname) ? "current" : ""
           } menu-item-has-children`}
         >
-          <a href="#">
+          <a href="/">
             <span className="mr-10">Home</span>
             {/* <i className="icon icon-chevron-sm-down" /> */}
           </a>

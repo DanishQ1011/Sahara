@@ -1,7 +1,7 @@
 module.exports = [
   {
     id: 1,
-    img: "/img/blog/1.png",
+    img: "/img/blog/1.jpg",
     title: "10 European ski destinations you should visit this winter",
     date: "Jan 06, 2023",
     delayAnimation: "100",
@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     id: 2,
-    img: "/img/blog/2.png",
+    img: "/img/blog/2.jpg",
     title: "Booking travel during Corona: good advice in an uncertain time",
     date: "April 06, 2022",
     delayAnimation: "200",
@@ -21,7 +21,7 @@ module.exports = [
   },
   {
     id: 3,
-    img: "/img/blog/3.png",
+    img: "/img/blog/3.jpg",
     title: "Where can I go? 5 amazing countries that open right now",
     date: "Jan 06, 2023",
     delayAnimation: "300",

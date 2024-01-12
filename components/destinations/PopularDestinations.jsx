@@ -49,11 +49,11 @@ const PopularDestinations = () => {
             >
               <div className="citiesCard__image ratio ratio-3:4">
                 <Image
-                  width={300}
-                  height={400}
+                  width={500}
+                  height={500}
                   src={item.img}
                   alt="image"
-                  className="js-lazy"
+                  className="js-lazy "
                 />
               </div>
               <div className="citiesCard__content d-flex flex-column justify-between text-center pt-30 pb-20 px-20">

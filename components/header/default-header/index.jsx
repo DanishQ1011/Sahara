@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import MainMenu from "../MainMenu";
-import CurrenctyMegaMenu from "../CurrenctyMegaMenu";
+// import CurrenctyMegaMenu from "../CurrenctyMegaMenu";
 import LanguageMegaMenu from "../LanguageMegaMenu";
 
 import MobileMenu from "../MobileMenu";
@@ -54,7 +54,7 @@ const Header1 = () => {
             <div className="col-auto">
               <div className="d-flex items-center">
                 <div className="row x-gap-20 items-center xxl:d-none">
-                  <CurrenctyMegaMenu textClass="text-dark-1" />
+                  {/* <CurrenctyMegaMenu textClass="text-dark-1" /> */}
                   {/* End Megamenu for Currencty */}
 
                   {/* Start vertical devider*/}

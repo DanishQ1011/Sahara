@@ -4,7 +4,7 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import MainMenu from "../MainMenu";
-import CurrenctyMegaMenu from "../CurrenctyMegaMenu";
+// import CurrenctyMegaMenu from "../CurrenctyMegaMenu";
 import LanguageMegaMenu from "../LanguageMegaMenu";
 import MobileMenu from "../MobileMenu";
 import { useRouter } from "next/navigation";
@@ -100,7 +100,7 @@ const Header1 = () => {
             <div className="col-auto">
               <div className="d-flex items-center">
                 <div className="row x-gap-20 items-center xxl:d-none">
-                  <CurrenctyMegaMenu textClass="text-white" />
+                  {/* <CurrenctyMegaMenu textClass="text-white" /> */}
                   {/* End Megamenu for Currencty */}
 
                   {/* Start vertical devider*/}

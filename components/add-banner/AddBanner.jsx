@@ -5,7 +5,7 @@ const AddBanner = () => {
   const addContent = [
     {
       id: 1,
-      img: "/img/backgrounds/1.png",
+      img: "/img/backgrounds/1.jpg",
       title: (
         <>
           Things To Do On
@@ -18,7 +18,7 @@ const AddBanner = () => {
     },
     {
       id: 2,
-      img: "/img/backgrounds/2.png",
+      img: "/img/backgrounds/2.jpg",
       title: "Up to 70% Discount!",
       meta: "Enjoy Summer Deals",
       routerPath: "/",
