@@ -30,7 +30,6 @@ export default function SignUpForm(){
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
   
     if (password !== confirmPassword) {
       setPasswordMatchError('Passwords do not match');
@@ -65,12 +64,6 @@ export default function SignUpForm(){
         setSignupSuccess(true);
         console.log('Signup successful. Signup success state:', signupSuccess);
       }
-=======
-
-   try {
-      const { user, error } = await supabase.auth.signUp({ email, password });
-      router.push('/'); // Redirect to home page on success
->>>>>>> parent of 3abca99 (Update SignUpForm.jsx)
     } catch (error) {
       setError(error.message);
     }
