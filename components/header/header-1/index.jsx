@@ -1,5 +1,4 @@
-
-'use client'
+'use client';
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -80,10 +79,10 @@ const Header1 = () => {
           <div className="row justify-between items-center">
             <div className="col-auto">
               <div className="d-flex items-center">
-                <Link href="/" className="header-logo mr-20">
+                <a href="/" className="header-logo mr-20">
                   <img src="/img/general/logo-light.svg" alt="logo icon" />
                   <img src="/img/general/logo-light.svg" alt="logo icon" />
-                </Link>
+                </a>
                 {/* End logo */}
 
                 <div className="header-menu">

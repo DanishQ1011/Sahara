@@ -68,11 +68,10 @@ const MainMenu = ({ style = "" }) => {
             isActiveParentChaild(blogItems, pathname) ? "current" : ""
           } menu-item-has-children`}
         >
-          <a href="#">
-            <span className="mr-10">Blog</span>
-            <i className="icon icon-chevron-sm-down" />
+          <a href="/blog-list-v1">
+            <span className="mr-8">Blogs</span>
           </a>
-          <ul className="subnav">
+          {/* <ul className="subnav">
             {blogItems.map((menu, i) => (
               <li
                 key={i}
@@ -83,7 +82,7 @@ const MainMenu = ({ style = "" }) => {
                 <Link href={menu.routePath}>{menu.name}</Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </li>
         {/* End blogIems */}
 
