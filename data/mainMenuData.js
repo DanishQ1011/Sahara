@@ -150,22 +150,22 @@ export const categorieMegaMenuItems = [
                 name: "Hotel List v1",
                 routePath: "/hotel-list-v1",
               },
-              {
-                name: "Hotel List v2",
-                routePath: "/hotel-list-v2",
-              },
-              {
-                name: "Hotel List v3",
-                routePath: "/hotel-list-v3",
-              },
-              {
-                name: "Hotel List v4",
-                routePath: "/hotel-list-v4",
-              },
-              {
-                name: "Hotel List v5",
-                routePath: "/hotel-list-v5",
-              },
+              // {
+              //   name: "Hotel List v2",
+              //   routePath: "/hotel-list-v2",
+              // },
+              // {
+              //   name: "Hotel List v3",
+              //   routePath: "/hotel-list-v3",
+              // },
+              // {
+              //   name: "Hotel List v4",
+              //   routePath: "/hotel-list-v4",
+              // },
+              // {
+              //   name: "Hotel List v5",
+              //   routePath: "/hotel-list-v5",
+              // },
             ],
           },
           {
