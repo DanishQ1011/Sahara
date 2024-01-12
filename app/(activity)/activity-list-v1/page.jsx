@@ -8,8 +8,8 @@ import Pagination from "@/components/activity-list/common/Pagination";
 import Sidebar from "@/components/activity-list/activity-list-v1/Sidebar";
 
 export const metadata = {
-  title: "Activity List v1 || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Activity List v1 || Saharaa - Travel Like Home",
+  description: "Saharaa provides great choices of tours at fair prices",
 };
 
 const index = () => {
