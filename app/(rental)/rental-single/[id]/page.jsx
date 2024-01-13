@@ -17,8 +17,8 @@ import MapPropertyFinder from "@/components/rental-single/MapPropertyFinder";
 import HelpfulFacts from "@/components/rental-single/HelpfulFacts";
 
 export const metadata = {
-  title: "Rental Single || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Rental Single || Saharaa - Travel Like Home",
+  description: "Saharaa - Travel & Tour Agency with affordable prices",
 };
 
 const TourSingleV1Dynamic = ({ params }) => {

@@ -17,8 +17,8 @@ import Faq from "@/components/faq/Faq";
 import MapPropertyFinder from "@/components/car-single/MapPropertyFinder";
 
 export const metadata = {
-  title: "Car Single || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Car Single || Saharaa - Travel Like Home",
+  description: "Saharaa - Travel & Tour Agency with affordable prices",
 };
 
 const TourSingleV1Dynamic = ({ params }) => {

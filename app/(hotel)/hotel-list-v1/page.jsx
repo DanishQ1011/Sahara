@@ -8,8 +8,8 @@ import Pagination from "@/components/hotel-list/common/Pagination";
 import Sidebar from "@/components/hotel-list/hotel-list-v1/Sidebar";
 
 export const metadata = {
-  title: "Hotel List v1 || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Hotel List v1 || Saharaa - Travel Like Home",
+  description: "Saharaa - Travel & Tour Agency with affordable prices",
 };
 
 const index = () => {

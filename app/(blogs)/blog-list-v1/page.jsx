@@ -6,8 +6,8 @@ import DefaultFooter from "@/components/footer/default";
 import Blog1 from "@/components/blog/Blog1";
 
 export const metadata = {
-  title: "Blog List V1 || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Blog List V1 || Saharaa - Travel Like Home",
+  description: "Saharaa - Travel & Tour Agency with affordable prices",
 };
 
 const BlogListV1 = () => {
