@@ -137,7 +137,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/7.png",
+        megaBanner: "/img/backgrounds/7.jpg",
         title: "Things to do on your hotel",
         btnText: "See Hotel",
         btnRoute: "/hotel-list-v1",
@@ -176,10 +176,10 @@ export const categorieMegaMenuItems = [
                 name: "Hotel Single v1",
                 routePath: "/hotel-single-v1/5",
               },
-              {
-                name: "Hotel Single v2",
-                routePath: "/hotel-single-v2/3",
-              },
+              // {
+              //   name: "Hotel Single v2",
+              //   routePath: "/hotel-single-v2/3",
+              // },
             ],
           },
           {
@@ -201,7 +201,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/8.png",
+        megaBanner: "/img/backgrounds/8.jpg",
         title: "Things to do on your tour",
         btnText: "See Tour",
         btnRoute: "/tour-list-v1",
@@ -214,20 +214,20 @@ export const categorieMegaMenuItems = [
                 name: "Tour List v1",
                 routePath: "/tour-list-v1",
               },
-              {
-                name: "Tour List v2",
-                routePath: "/tour-list-v2",
-              },
+              // {
+              //   name: "Tour List v2",
+              //   routePath: "/tour-list-v2",
+              // },
             ],
           },
           {
             id: 2,
             title: "Tour Pages",
             menuList: [
-              {
-                name: "Tour Map",
-                routePath: "/tour-list-v3",
-              },
+              // {
+              //   name: "Tour Map",
+              //   routePath: "/tour-list-v3",
+              // },
               {
                 name: "Tour Single",
                 routePath: "/tour-single/5",
@@ -243,7 +243,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/9.png",
+        megaBanner: "/img/backgrounds/9.jpg",
         title: "Things to do on your activity",
         btnText: "See Activity",
         btnRoute: "/activity-list-v1",
@@ -256,20 +256,20 @@ export const categorieMegaMenuItems = [
                 name: "Activity List v1",
                 routePath: "/activity-list-v1",
               },
-              {
-                name: "Activity List v2",
-                routePath: "/activity-list-v2",
-              },
+              // {
+              //   name: "Activity List v2",
+              //   routePath: "/activity-list-v2",
+              // },
             ],
           },
           {
             id: 2,
             title: "Activity Pages",
             menuList: [
-              {
-                name: "Activity Map",
-                routePath: "/activity-list-v3",
-              },
+              // {
+              //   name: "Activity Map",
+              //   routePath: "/activity-list-v3",
+              // },
               {
                 name: "Activity Single",
                 routePath: "activity-single",
@@ -286,7 +286,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/10.png",
+        megaBanner: "/img/backgrounds/10.jpg",
         title: "Things to do on your rentals",
         btnText: "See Rental",
         btnRoute: "/rental-list-v1",
@@ -299,20 +299,20 @@ export const categorieMegaMenuItems = [
                 name: "Rental List v1",
                 routePath: "/rental-list-v1",
               },
-              {
-                name: "Rental List v2",
-                routePath: "/rental-list-v2",
-              },
+              // {
+              //   name: "Rental List v2",
+              //   routePath: "/rental-list-v2",
+              // },
             ],
           },
           {
             id: 2,
             title: "Rental Pages",
             menuList: [
-              {
-                name: "Rental Map",
-                routePath: "/rental-list-v3",
-              },
+              // {
+              //   name: "Rental Map",
+              //   routePath: "/rental-list-v3",
+              // },
               {
                 name: "Rental Single",
                 routePath: "/rental-single/3",
@@ -328,7 +328,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/5.png",
+        megaBanner: "/img/backgrounds/11.jpg",
         title: "Things to do on your Next Car",
         btnText: "See Car",
         btnRoute: "/car-list-v1",
@@ -341,20 +341,20 @@ export const categorieMegaMenuItems = [
                 name: "Car List v1",
                 routePath: "/car-list-v1",
               },
-              {
-                name: "Car List v2",
-                routePath: "/car-list-v2",
-              },
+              // {
+              //   name: "Car List v2",
+              //   routePath: "/car-list-v2",
+              // },
             ],
           },
           {
             id: 2,
             title: "Car Pages",
             menuList: [
-              {
-                name: "Car Map",
-                routePath: "/car-list-v3",
-              },
+              // {
+              //   name: "Car Map",
+              //   routePath: "/car-list-v3",
+              // },
               {
                 name: "Car Single",
                 routePath: "/car-single/1",
@@ -371,7 +371,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/1.png",
+        megaBanner: "/img/backgrounds/12.jpg",
         title: "Things to do on your Cruise",
         btnText: "See Cruise",
         btnRoute: "/cruise-list-v1",
@@ -384,20 +384,20 @@ export const categorieMegaMenuItems = [
                 name: "Cruise List v1",
                 routePath: "/cruise-list-v1",
               },
-              {
-                name: "Cruise List v2",
-                routePath: "/cruise-list-v2",
-              },
+              // {
+              //   name: "Cruise List v2",
+              //   routePath: "/cruise-list-v2",
+              // },
             ],
           },
           {
             id: 2,
             title: "Cruise Pages",
             menuList: [
-              {
-                name: "Cruise Map",
-                routePath: "/cruise-list-v3",
-              },
+              // {
+              //   name: "Cruise Map",
+              //   routePath: "/cruise-list-v3",
+              // },
               {
                 name: "Cruise Single",
                 routePath: "/cruise-single/3",
@@ -413,7 +413,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/2.png",
+        megaBanner: "/img/backgrounds/13.jpg",
         title: "Things to do on your flights",
         btnText: "See Flights",
         btnRoute: "/flight-list-v1",
@@ -447,22 +447,22 @@ export const categorieMobileItems = [
             name: "Hotel List v1",
             routePath: "/hotel-list-v1",
           },
-          {
-            name: "Hotel List v2",
-            routePath: "/hotel-list-v2",
-          },
-          {
-            name: "Hotel List v3",
-            routePath: "/hotel-list-v3",
-          },
-          {
-            name: "Hotel List v4",
-            routePath: "/hotel-list-v4",
-          },
-          {
-            name: "Hotel List v5",
-            routePath: "/hotel-list-v5",
-          },
+          // {
+          //   name: "Hotel List v2",
+          //   routePath: "/hotel-list-v2",
+          // },
+          // {
+          //   name: "Hotel List v3",
+          //   routePath: "/hotel-list-v3",
+          // },
+          // {
+          //   name: "Hotel List v4",
+          //   routePath: "/hotel-list-v4",
+          // },
+          // {
+          //   name: "Hotel List v5",
+          //   routePath: "/hotel-list-v5",
+          // },
         ],
       },
       {
@@ -503,20 +503,14 @@ export const categorieMobileItems = [
             name: "Tour List v1",
             routePath: "/tour-list-v1",
           },
-          {
-            name: "Tour List v2",
-            routePath: "/tour-list-v2",
-          },
+
         ],
       },
       {
         id: 2,
         title: "Tour Pages",
         menuList: [
-          {
-            name: "Tour Map",
-            routePath: "/tour-list-v3",
-          },
+
           {
             name: "Tour Single",
             routePath: "/tour-single/5",
@@ -537,20 +531,16 @@ export const categorieMobileItems = [
             name: "Activity List v1",
             routePath: "/activity-list-v1",
           },
-          {
-            name: "Activity List v2",
-            routePath: "/activity-list-v2",
-          },
         ],
       },
       {
         id: 2,
         title: "Activity Pages",
         menuList: [
-          {
-            name: "Activity Map",
-            routePath: "/activity-list-v3",
-          },
+          // {
+          //   name: "Activity Map",
+          //   routePath: "/activity-list-v3",
+          // },
           {
             name: "Activity Single",
             routePath: "/activity-single/3",
@@ -571,20 +561,20 @@ export const categorieMobileItems = [
             name: "Rental List v1",
             routePath: "/rental-list-v1",
           },
-          {
-            name: "Rental List v2",
-            routePath: "/rental-list-v2",
-          },
+          // {
+          //   name: "Rental List v2",
+          //   routePath: "/rental-list-v2",
+          // },
         ],
       },
       {
         id: 2,
         title: "Rental Pages",
         menuList: [
-          {
-            name: "Rental Map",
-            routePath: "/rental-list-v3",
-          },
+          // {
+          //   name: "Rental Map",
+          //   routePath: "/rental-list-v3",
+          // },
           {
             name: "Rental Single",
             routePath: "/rental-single/3",
@@ -605,20 +595,16 @@ export const categorieMobileItems = [
             name: "Car List v1",
             routePath: "/car-list-v1",
           },
-          {
-            name: "Car List v2",
-            routePath: "/car-list-v2",
-          },
         ],
       },
       {
         id: 2,
         title: "Car Pages",
         menuList: [
-          {
-            name: "Car Map",
-            routePath: "/car-list-v3",
-          },
+          // {
+          //   name: "Car Map",
+          //   routePath: "/car-list-v3",
+          // },
           {
             name: "Car Single",
             routePath: "/car-single/1",
@@ -639,20 +625,20 @@ export const categorieMobileItems = [
             name: "Cruise List v1",
             routePath: "/cruise-list-v1",
           },
-          {
-            name: "Cruise List v2",
-            routePath: "/cruise-list-v2",
-          },
+          // {
+          //   name: "Cruise List v2",
+          //   routePath: "/cruise-list-v2",
+          // },
         ],
       },
       {
         id: 2,
         title: "Cruise Pages",
         menuList: [
-          {
-            name: "Cruise Map",
-            routePath: "/cruise-list-v3",
-          },
+          // {
+          //   name: "Cruise Map",
+          //   routePath: "/cruise-list-v3",
+          // },
           {
             name: "Cruise Single",
             routePath: "/cruise-single/3",
